@@ -2,35 +2,37 @@
     title = "widget.js"
     description = "The lightweight JavaScript widget framework"
     sideContent = False
-    import mypygreen
 %>
 
-<%inherit file="/common/base.mako"/>
+<%inherit file="_base.mako"/>
 
-<%block name="head">
-    <link rel="stylesheet" type="text/css" href="/static/css/style.css"></link>
+<%block name="beforeContent">
+<header class="page-title">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>${title}</h1>
+                <h2>${description}</h2>
+
+                <div class="horizontalSocialNetwork">
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://widgetjs.neoname.eu" data-text="widget.js - The lightweight JavaScript widget framework" data-via="nicolasvanhoren" data-lang="fr">Tweeter</a>
+                    <a href="https://twitter.com/nicolasvanhoren" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false">Follow @nicolasvanhoren</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                    <iframe src="http://ghbtns.com/github-btn.html?user=nicolas-van&repo=widget.js&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 </%block>
 
 <%block name="mainContent">
 
-<header>
-    <h1>${title}</h1>
-    <h2>${description}</h2>
-</header>
-
-<div class="horizontalSocialNetwork">
-    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://widgetjs.neoname.eu" data-text="widget.js - The lightweight JavaScript widget framework" data-via="nicolasvanhoren" data-lang="fr">Tweeter</a>
-    <a href="https://twitter.com/nicolasvanhoren" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false">Follow @nicolasvanhoren</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-    <iframe src="http://ghbtns.com/github-btn.html?user=nicolas-van&repo=widget.js&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
-</div>
-
-<%text filter="mypygreen.markdown">
+<%text filter="markdown">
 
 widget.js is a lightweight framework in JavaScript to separate web applications in multiples reusable components called
 widgets.
 
-    :::javascript
     var MyWidget = widget.Widget.$extend({
         render: function() {
             return "<h1>Welcome to widget.js!</h1>";
@@ -67,10 +69,7 @@ widgets, lifecycle management and events.
 
     </script>
     <a href="https://github.com/nicolas-van/widget.js">
-        <img style="position: absolute; top: 0; right: 0; border: 0;"
-        src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67"
-        alt="Fork me on GitHub"
-        data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png">
     </a>
     <script src="https://cdn.rawgit.com/jashkenas/underscore/1.8.3/underscore.js"></script>
     <script src="https://cdn.rawgit.com/nicolas-van/ring.js/2.1.0/ring.js"></script>
