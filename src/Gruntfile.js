@@ -9,13 +9,13 @@ module.exports = function(grunt) {
                     paths: ["."]
                 },
                 files: {
-                    "static/style.css": "src/css/style.less",
+                    "static/style.css": "sources/css/style.less",
                 },
             }
         },
         watch: {
             less: {
-                files: "src/css/**.less",
+                files: "sources/css/**.less",
                 tasks: ['less'],
             },
         },
