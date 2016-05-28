@@ -50,18 +50,19 @@
 
 <p>widget.js is a lightweight framework in JavaScript to separate web applications in multiples reusable components called
 widgets.</p>
-<pre><code>var MyWidget = widget.Widget.$extend({
-    render: function() {
-        return "&lt;h1&gt;Welcome to widget.js!&lt;/h1&gt;";
-    },
-    domEvents: {
-        "click h1": function() {
+<pre><code>class MyWidget extends widget.Widget {
+    constructor() {
+        super();
+        this.on("dom:click h1", function() {
             window.location = "http://widgetjs.neoname.eu";
-        },
-    },
-});
+        });
+    }
+    render() {
+        return "&lt;h1&gt;Welcome to widget.js!&lt;/h1&gt;";
+    }
+}
 
-new MyWidget().appendTo($("body"));
+new MyWidget().appendTo(document.body);
 </code></pre>
 <p><a href="http://widgetjs.readthedocs.org/">Read the documentation here</a></p>
 <p>widget.js is not a full featured framework that can handle all aspects of a web application like network communications
@@ -103,10 +104,7 @@ widgets, lifecycle management and events.</p>
     <a href="https://github.com/nicolas-van/widget.js">
         <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png">
     </a>
-    <script src="https://cdn.rawgit.com/jashkenas/underscore/1.8.3/underscore.js"></script>
-    <script src="https://cdn.rawgit.com/nicolas-van/ring.js/2.1.0/ring.js"></script>
-    <script src="https://cdn.rawgit.com/jquery/jquery/1.11.3/dist/jquery.js"></script>
-    <script src="https://cdn.rawgit.com/nicolas-van/widget.js/master/widget.js"></script>
+    <script src="https://cdn.rawgit.com/nicolas-van/widget.js/1.0.0/widget.js"></script>
 
 
     <!--[if lt IE 8]>
