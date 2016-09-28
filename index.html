@@ -53,12 +53,10 @@ widgets.</p>
 <pre><code>class MyWidget extends widget.Widget {
     constructor() {
         super();
+        this.el.innerHTML = "&lt;h1&gt;Welcome to widget.js!&lt;/h1&gt;";
         this.on("dom:click h1", function() {
             window.location = "http://widgetjs.neoname.eu";
         });
-    }
-    render() {
-        return "&lt;h1&gt;Welcome to widget.js!&lt;/h1&gt;";
     }
 }
 
