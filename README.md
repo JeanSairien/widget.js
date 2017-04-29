@@ -1,5 +1,5 @@
 
-widget.js
+widget.js ----> mamene
 =========
 
 A lightweight JavaScript component framework
